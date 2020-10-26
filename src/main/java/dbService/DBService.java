@@ -11,9 +11,9 @@ import java.sql.SQLException;
 public class DBService {
     private final Connection connection;
 
-    public DBService() {
-//        this.connection = getH2Connection();
+    public DBService(){
         this.connection = getMysqlConnection();
+        System.out.println(connection);
         System.out.println("Соединение с СУБД выполнено.");
     }
 
@@ -54,16 +54,6 @@ public class DBService {
         }
     }
 
-
-    public void cleanUp() throws DBException {
-        UsersDAO dao = new UsersDAO(connection);
-        try {
-            dao.dropTable();
-        } catch (SQLException e) {
-            throw new DBException(e);
-        }
-    }
-
     public static Connection getMysqlConnection() {
         try {
             DriverManager.registerDriver((Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance());
@@ -74,7 +64,7 @@ public class DBService {
                     append("jdbc:mysql://").        //db type
                     append("localhost:").           //host name
                     append("3306/").                //port
-                    append("Local instance MySQL80?").          //db name
+                    append("sys?").          //db name
                     append("user=root1&").          //login
                     append("password=root&").   //password
                     append("serverTimezone=UTC");

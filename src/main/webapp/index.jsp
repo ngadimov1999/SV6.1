@@ -15,7 +15,7 @@
         <input type="submit" value="Sign in">
     </form>
     <div class="button">
-        <p class="button"><a href="http://localhost:8080/ServletWithJSP_war/registration" target="_self">Sign UP</a></p>
+        <p class="button"><a href="http://localhost:8080/SV6_1_war/registration" target="_self">Sign UP</a></p>
     </div>
 </body>
 </html>

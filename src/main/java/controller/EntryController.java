@@ -21,7 +21,7 @@ public class EntryController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsersDataSet userProfile = SessionController.getInstance().getUserBySessionId(req.getSession().getId());
         if (userProfile != null) {
-            resp.sendRedirect("/ServletWithJSP_war/explorer");
+            resp.sendRedirect("/SV6_1_war/explorer");
             return;
         }
         req.getRequestDispatcher("index.jsp").forward(req, resp);
@@ -54,7 +54,7 @@ public class EntryController extends HttpServlet {
                 e.printStackTrace();
             }
             SessionController.getInstance().addSession(req.getSession().getId(), userProfile);
-            resp.sendRedirect("/ServletWithJSP_war/explorer");
+            resp.sendRedirect("/SV6_1_war/explorer");
         }
     }
 

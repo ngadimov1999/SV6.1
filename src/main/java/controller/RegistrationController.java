@@ -51,7 +51,7 @@ public class RegistrationController extends HttpServlet {
             } catch (DBException e) {
                 e.printStackTrace();
             }
-            resp.sendRedirect("/ServletWithJSP_war/");
+            resp.sendRedirect("/SV6_1_war/");
         }
     }
 

@@ -37,8 +37,4 @@ public class UsersDAO {
     public void createTable() throws SQLException {
         executor.execUpdate("create table if not exists users (id bigint auto_increment primary key, user_login varchar(255), user_pass varchar(255), user_email varchar(255))");
     }
-
-    public void dropTable() throws SQLException {
-        executor.execUpdate("drop table users");
-    }
 }
